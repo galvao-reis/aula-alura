@@ -1,0 +1,29 @@
+@import url("./header.css");
+@import url("./banner.css");
+@import url("./carrossel.css");
+@import url("./topics.css");
+@import url("./contact.css");
+@import url("./footer.css");
+
+:root{
+    --bg-color: #EBECEE;
+    --white: #FFFFFF;
+    --light_gray: #858585;
+    --dark_gray: #474646;
+    --black: #000000;
+    --orange: #EB9B00;
+    --blue: #002f52;
+    --gradient : linear-gradient(160deg, #002F52 0%, #326589 100%);
+    --main_font : "Poppins";
+    --secondary_font : "Josefin Sans"; 
+}
+
+body{
+    background-color: var(--bg-color);
+    font-family: var(--main_font),sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+/* Useful links
+https://www.alura.com.br/artigos/entenda-a-propriedade-position-css */

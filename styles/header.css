@@ -1,0 +1,164 @@
+.header__menu-burger{
+    /* display: block; */
+    height: 5em;
+    width: 5em;
+    background-image: url("../assets/Menu.svg");
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header{
+    height: 5em;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1.5em;
+    position: relative;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.menu-list{
+    display:none;
+    position:absolute;
+    top: 100%;
+    width: 18.75em;
+}
+
+
+.container__button{
+    display: none;
+}
+
+
+/* https://www.w3schools.com/cssref/css_selectors.php */
+/* https://cursos.alura.com.br/extra/alura-mais/animacao-de-coracao-um-projeto-em-html-css-c1360 */
+.container__button:checked ~ label > .header__menu-burger{
+    background-image: url(../assets/Menu_click.svg);
+  
+}
+/* The closesest to a condition you'd get on CSS */
+/* Usamos a pseudo-classe checked e conectamos usando o ~ com o menu0lust */
+.container__button:checked ~ .menu-list{
+    display:block;
+}
+
+.menu-list__title, .menu-list__item{
+    background-color: var(--white);
+    padding: 1em 1.5em;
+}
+
+.menu-list__title{
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.menu-list__link{
+    padding: 1em;
+    background: var(--gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.container__title, .options, .container__text{
+    display: none;
+}
+
+
+@media screen and (min-width: 1024px){
+    .header{
+        padding-left: 5em;
+    }
+    
+    .container__title, .container__title--bold{
+        font-family: var(--secondary_font);
+    }
+    
+    .container__title{
+        display: block;
+        font-size: 1.875em;
+        font-weight: 400;
+    }
+
+    .container__title--bold{
+        font-weight: 700;
+    } 
+
+    .options__item, .options__link{
+        padding: 2em .5em;
+    }
+
+    .options__button{
+        display: none;
+    }
+    .options__button:checked ~  .menu-list{
+        display: block;
+        width: auto;
+    }
+
+    .menu-list__link:hover{
+        background: transparent;
+        background-clip: inherit;
+        -webkit-background-clip:inherit;
+        -webkit-text-fill-color: var(--white);
+        color: var(--white);
+    }
+    .menu-list__item:hover{
+        background: var(--gradient);
+    }
+    
+    .options__button:checked ~ label > .options__item--toggle{
+        background: var(--gradient);
+        color: var(--white);
+    }
+
+    .options{
+        display: flex;
+        gap: 2.5em;
+        text-transform: uppercase;
+    }
+    .options__link{
+        color: var(--black);
+        text-decoration: none;
+    }
+
+    .container__image--transparent, .header__menu-burger{
+        display: none;
+    }
+}
+
+@media screen and (min-width:1728px){
+    .options__button:checked ~ label > .menu-list{
+        background: var(--gradient);
+        color: var(--white);
+    }
+
+    .options{
+        margin-right: auto;
+    }
+
+    .container__title{
+        padding-right: 2em;
+    }
+
+    .container__text{
+        display: block;
+    }
+
+    .container__link{
+        display: flex;
+        align-items: center;
+        text-decoration:none;
+        font-size: 1.25em;
+        color: var(--black);
+    }
+}
