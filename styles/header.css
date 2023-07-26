@@ -29,6 +29,7 @@
     position:absolute;
     top: 100%;
     width: 18.75em;
+    z-index: 2;
 }
 
 
